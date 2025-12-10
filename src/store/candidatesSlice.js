@@ -1,22 +1,7 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import { candidatesApi, Candidate } from '@/services/candidatesApi';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { candidatesApi } from '../services/candidatesApi.js';
 
-interface CandidatesState {
-  candidates: Candidate[];
-  loading: boolean;
-  error: string | null;
-  totalCount: number;
-  currentPage: number;
-  pageSize: number;
-  filters: {
-    name: string;
-    skills: string;
-    experience: string;
-    status: string;
-  };
-}
-
-const initialState: CandidatesState = {
+const initialState = {
   candidates: [],
   loading: false,
   error: null,
@@ -34,7 +19,7 @@ const initialState: CandidatesState = {
 export const fetchCandidates = createAsyncThunk(
   'candidates/fetchCandidates',
   async (_, { getState }) => {
-    const state = getState() as { candidates: CandidatesState };
+    const state = getState();
     const { currentPage, pageSize, filters } = state.candidates;
     const response = await candidatesApi.getCandidates({
       page: currentPage,
@@ -49,14 +34,14 @@ const candidatesSlice = createSlice({
   name: 'candidates',
   initialState,
   reducers: {
-    setPage: (state, action: PayloadAction<number>) => {
+    setPage: (state, action) => {
       state.currentPage = action.payload;
     },
-    setPageSize: (state, action: PayloadAction<number>) => {
+    setPageSize: (state, action) => {
       state.pageSize = action.payload;
       state.currentPage = 1;
     },
-    setFilters: (state, action: PayloadAction<Partial<CandidatesState['filters']>>) => {
+    setFilters: (state, action) => {
       state.filters = { ...state.filters, ...action.payload };
       state.currentPage = 1;
     },

@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '@/hooks/useAppDispatch';
-import { fetchCandidates, setFilters, clearFilters, setPage, setPageSize } from '@/store/candidatesSlice';
-import CandidatesFilters from './CandidatesFilters';
-import CandidatesTableView from './CandidatesTableView';
-import CandidatesPagination from './CandidatesPagination';
+import { useAppDispatch, useAppSelector } from '../../hooks/useAppDispatch.js';
+import { fetchCandidates, setFilters, clearFilters, setPage, setPageSize } from '../../store/candidatesSlice.js';
+import CandidatesFilters from './CandidatesFilters.jsx';
+import CandidatesTableView from './CandidatesTableView.jsx';
+import CandidatesPagination from './CandidatesPagination.jsx';
 
 const CandidatesTable = () => {
   const dispatch = useAppDispatch();
@@ -15,7 +15,7 @@ const CandidatesTable = () => {
     dispatch(fetchCandidates());
   }, [dispatch, currentPage, pageSize, filters]);
 
-  const handleFilterChange = (key: string, value: string) => {
+  const handleFilterChange = (key, value) => {
     dispatch(setFilters({ [key]: value }));
   };
 
@@ -23,29 +23,24 @@ const CandidatesTable = () => {
     dispatch(clearFilters());
   };
 
-  const handlePageChange = (page: number) => {
+  const handlePageChange = (page) => {
     dispatch(setPage(page));
   };
 
-  const handlePageSizeChange = (size: number) => {
+  const handlePageSizeChange = (size) => {
     dispatch(setPageSize(size));
   };
 
   const totalPages = Math.ceil(totalCount / pageSize);
 
   return (
-    <div className="bg-card rounded-xl border border-border shadow-sm">
-      {/* Filters */}
+    <div className="candidates-table-wrapper">
       <CandidatesFilters
         filters={filters}
         onFilterChange={handleFilterChange}
         onClearFilters={handleClearFilters}
       />
-
-      {/* Table */}
       <CandidatesTableView candidates={candidates} loading={loading} />
-
-      {/* Pagination */}
       <CandidatesPagination
         currentPage={currentPage}
         totalPages={totalPages}
