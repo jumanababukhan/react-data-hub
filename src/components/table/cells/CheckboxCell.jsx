@@ -1,20 +1,18 @@
-import { Input } from 'reactstrap';
-
 export const CheckboxHeader = ({ table }) => (
-  <Input
+  <input
     type="checkbox"
+    className="hira-checkbox"
     checked={table.getIsAllRowsSelected()}
     onChange={table.getToggleAllRowsSelectedHandler()}
-    className="table-checkbox"
   />
 );
 
 export const CheckboxCell = ({ row }) => (
-  <Input
+  <input
     type="checkbox"
+    className="hira-checkbox"
     checked={row.getIsSelected()}
     disabled={!row.getCanSelect()}
     onChange={row.getToggleSelectedHandler()}
-    className="table-checkbox"
   />
 );

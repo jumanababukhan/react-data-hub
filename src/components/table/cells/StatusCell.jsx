@@ -1,7 +1,14 @@
 const StatusCell = ({ status }) => {
-  const statusClass = status.toLowerCase();
+  const getStatusClass = () => {
+    const statusLower = status.toLowerCase();
+    if (statusLower === 'interviewed') return 'hira-status-interviewed';
+    if (statusLower === 'screened') return 'hira-status-screened';
+    if (statusLower === 'shortlisted') return 'hira-status-shortlisted';
+    return '';
+  };
+
   return (
-    <span className={`status-badge ${statusClass}`}>
+    <span className={`hira-status-badge ${getStatusClass()}`}>
       {status}
     </span>
   );
