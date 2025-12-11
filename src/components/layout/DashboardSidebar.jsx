@@ -12,17 +12,17 @@ const DashboardSidebar = ({ isOpen, onClose }) => {
   return (
     <>
       <div 
-        className={`sidebar-overlay ${isOpen ? 'open' : ''}`} 
+        className={`hira-sidebar-overlay ${isOpen ? 'open' : ''}`} 
         onClick={onClose}
       />
-      <aside className={`dashboard-sidebar ${isOpen ? 'open' : ''}`}>
+      <aside className={`hira-sidebar ${isOpen ? 'open' : ''}`}>
         {/* Logo */}
-        <div className="sidebar-logo">
+        <div className="hira-sidebar-logo">
           <div className="d-flex align-items-center gap-2">
-            <div className="logo-box">
+            <div className="hira-logo-box">
               <Settings size={20} />
             </div>
-            <div className="logo-text">
+            <div className="hira-logo-text">
               <h1>INF <span>SERVICES</span></h1>
               <p>Intelligence. Impact.</p>
             </div>
@@ -30,16 +30,16 @@ const DashboardSidebar = ({ isOpen, onClose }) => {
         </div>
 
         {/* Divider */}
-        <div className="sidebar-divider" />
+        <div className="hira-sidebar-divider" />
 
         {/* Navigation */}
-        <nav className="sidebar-nav">
+        <nav className="hira-sidebar-nav">
           {navItems.map((item) => (
             <NavLink
               key={item.path}
               to={item.path}
               end={item.end}
-              className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
+              className={({ isActive }) => `hira-nav-item ${isActive ? 'active' : ''}`}
               onClick={onClose}
             >
               <item.icon size={20} />
@@ -49,7 +49,7 @@ const DashboardSidebar = ({ isOpen, onClose }) => {
         </nav>
 
         {/* Footer */}
-        <div className="sidebar-footer">
+        <div className="hira-sidebar-footer">
           <p>© 2025 HIRA</p>
         </div>
       </aside>

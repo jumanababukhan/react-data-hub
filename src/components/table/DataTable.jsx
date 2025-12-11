@@ -4,7 +4,7 @@ import {
   getCoreRowModel,
   flexRender,
 } from '@tanstack/react-table';
-import { Table, Input } from 'reactstrap';
+import { Table } from 'reactstrap';
 
 const DataTable = ({
   data,
@@ -32,9 +32,9 @@ const DataTable = ({
 
   if (loading) {
     return (
-      <div className="data-table-wrapper">
+      <div className="hira-table-wrapper">
         <div className="table-responsive">
-          <Table className="data-table">
+          <Table className="hira-table">
             <thead>
               <tr>
                 {columns.map((col, idx) => (
@@ -47,7 +47,7 @@ const DataTable = ({
                 <tr key={rowIdx}>
                   {columns.map((col, colIdx) => (
                     <td key={colIdx}>
-                      <div className="skeleton" style={{ 
+                      <div className="hira-skeleton" style={{ 
                         width: col.id === 'select' ? '18px' : '100px',
                         height: col.id === 'select' ? '18px' : '20px'
                       }} />
@@ -63,9 +63,9 @@ const DataTable = ({
   }
 
   return (
-    <div className="data-table-wrapper">
+    <div className="hira-table-wrapper">
       <div className="table-responsive">
-        <Table className="data-table">
+        <Table className="hira-table">
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>

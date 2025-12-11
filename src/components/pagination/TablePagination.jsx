@@ -16,36 +16,33 @@ const TablePagination = ({
   const getPageNumbers = () => {
     const pages = [];
     
-    if (totalPages <= 5) {
+    if (totalPages <= 6) {
       for (let i = 1; i <= totalPages; i++) pages.push(i);
     } else {
-      pages.push(1);
-      pages.push(2);
-      pages.push(3);
-      pages.push(4);
+      // Always show first few pages
+      pages.push(1, 2, 3, 4);
       
+      // Add ellipsis and last page
       if (currentPage > 4 && currentPage < totalPages - 1) {
         pages.splice(1, 3, '...', currentPage);
       }
       
-      if (totalPages > 5) {
-        pages.push('...');
-        pages.push(totalPages);
-      }
+      pages.push('...');
+      pages.push(totalPages);
     }
     
     return pages;
   };
 
   return (
-    <div className="table-pagination">
-      <div className="pagination-entries">
+    <div className="hira-pagination">
+      <div className="hira-pagination-entries">
         <span>Show</span>
         <Input
           type="select"
           value={pageSize}
           onChange={(e) => onPageSizeChange(Number(e.target.value))}
-          className="entries-select"
+          className="hira-entries-select"
         >
           {pageSizeOptions.map((size) => (
             <option key={size} value={size}>{size}</option>
@@ -54,30 +51,30 @@ const TablePagination = ({
         <span>entries</span>
       </div>
 
-      <div className="pagination-info">
+      <div className="hira-pagination-info">
         Showing {startEntry}-{endEntry} of {totalCount.toLocaleString()}
       </div>
 
-      <div className="pagination-controls">
+      <div className="hira-pagination-controls">
         <button
           type="button"
-          className="page-btn nav-btn"
+          className="hira-page-btn hira-page-btn-nav"
           disabled={currentPage === 1}
           onClick={() => onPageChange(currentPage - 1)}
         >
-          <ChevronLeft size={16} />
+          <ChevronLeft size={14} />
         </button>
 
         {getPageNumbers().map((page, idx) =>
           typeof page === 'string' ? (
-            <span key={`dots-${idx}`} className="page-dots">
+            <span key={`dots-${idx}`} className="hira-page-dots">
               {page}
             </span>
           ) : (
             <button
               key={page}
               type="button"
-              className={`page-btn ${currentPage === page ? 'active' : ''}`}
+              className={`hira-page-btn ${currentPage === page ? 'hira-page-btn-active' : ''}`}
               onClick={() => onPageChange(page)}
             >
               {page}
@@ -87,11 +84,11 @@ const TablePagination = ({
 
         <button
           type="button"
-          className="page-btn nav-btn"
+          className="hira-page-btn hira-page-btn-nav"
           disabled={currentPage === totalPages}
           onClick={() => onPageChange(currentPage + 1)}
         >
-          <ChevronRight size={16} />
+          <ChevronRight size={14} />
         </button>
       </div>
     </div>

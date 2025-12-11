@@ -1,16 +1,11 @@
-const ActionCell = ({ label = 'View Analytics', onClick, href = '#' }) => (
-  <a
-    href={href}
-    className="action-link"
-    onClick={(e) => {
-      if (onClick) {
-        e.preventDefault();
-        onClick();
-      }
-    }}
+const ActionCell = ({ label = 'View Analytics', onClick }) => (
+  <button
+    type="button"
+    className="hira-action-link"
+    onClick={onClick}
   >
     {label}
-  </a>
+  </button>
 );
 
 export default ActionCell;

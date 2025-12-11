@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 
 const NotFound = () => {
@@ -9,11 +9,11 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="not-found-page">
+    <div className="hira-not-found">
       <div>
         <h1>404</h1>
         <p>Oops! Page not found</p>
-        <a href="/">Return to Home</a>
+        <Link to="/dashboard">Return to Dashboard</Link>
       </div>
     </div>
   );

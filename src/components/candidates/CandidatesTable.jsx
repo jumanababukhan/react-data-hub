@@ -72,7 +72,6 @@ const CandidatesTable = () => {
           name={row.original.name}
           email={row.original.email}
           initials={row.original.initials}
-          avatarColor={row.original.avatarColor}
         />
       ),
     },
@@ -84,7 +83,9 @@ const CandidatesTable = () => {
     {
       accessorKey: 'experience',
       header: 'EXPERIENCE',
-      cell: ({ row }) => `${row.original.experience} years`,
+      cell: ({ row }) => (
+        <span className="hira-experience-text">{row.original.experience} years</span>
+      ),
     },
     {
       accessorKey: 'status',
@@ -94,6 +95,9 @@ const CandidatesTable = () => {
     {
       accessorKey: 'date',
       header: 'DATE',
+      cell: ({ row }) => (
+        <span className="hira-date-text">{row.original.date}</span>
+      ),
     },
     {
       id: 'actions',
@@ -121,7 +125,7 @@ const CandidatesTable = () => {
   const totalPages = Math.ceil(totalCount / pageSize);
 
   return (
-    <div className="candidates-table-container">
+    <div className="hira-table-container">
       <TableFilters
         filters={filters}
         filterConfig={filterConfig}

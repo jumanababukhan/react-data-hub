@@ -1,11 +1,11 @@
-const CandidateCell = ({ name, email, initials, avatarColor }) => (
-  <div className="candidate-cell">
-    <div className="candidate-avatar" style={{ backgroundColor: avatarColor }}>
+const CandidateCell = ({ name, email, initials }) => (
+  <div className="hira-candidate-cell">
+    <div className="hira-candidate-avatar">
       {initials}
     </div>
-    <div className="candidate-info">
-      <p className="name">{name}</p>
-      <p className="email">{email}</p>
+    <div className="hira-candidate-info">
+      <p className="hira-candidate-name">{name}</p>
+      <p className="hira-candidate-email">{email}</p>
     </div>
   </div>
 );
