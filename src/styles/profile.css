@@ -9,23 +9,23 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .hira-profile-header-left h1 {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 32px;
-  color: #0F172A;
+  font-size: 22px;
+  line-height: 28px;
+  color: #1E293B;
   margin: 0 0 4px 0;
 }
 
 .hira-profile-header-left p {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 20px;
   color: #64748B;
   margin: 0;
 }
@@ -44,122 +44,128 @@
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 18px;
+  color: #0EA5E9;
+}
+
+.hira-view-analytics-btn:hover span {
   color: #0284C7;
 }
 
 /* Profile Card */
 .hira-profile-card {
   background: #FFFFFF;
-  border: 1px solid #F1F5F9;
-  border-radius: 16px;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
-  padding: 32px;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.06);
+  padding: 24px 28px;
   margin-bottom: 24px;
 }
 
 .hira-profile-card-content {
   display: flex;
-  gap: 32px;
+  gap: 40px;
 }
 
 /* Profile Left Section */
 .hira-profile-left {
-  min-width: 240px;
-  max-width: 240px;
+  min-width: 220px;
+  max-width: 220px;
+  border-right: 1px solid #E2E8F0;
+  padding-right: 28px;
 }
 
 .hira-profile-avatar-section {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .hira-profile-avatar-large {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 40px;
+  font-weight: 600;
+  font-size: 36px;
   color: #FFFFFF;
-  margin: 0 auto 16px;
-  background: linear-gradient(135deg, #818CF8 0%, #C084FC 100%);
+  margin: 0 auto 14px;
+  background: linear-gradient(135deg, #818CF8 0%, #A855F7 100%);
 }
 
 .hira-profile-name-large {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 20px;
-  line-height: 28px;
-  color: #0F172A;
-  margin: 0 0 4px 0;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1E293B;
+  margin: 0 0 2px 0;
 }
 
 .hira-profile-title {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 13px;
+  line-height: 18px;
   color: #64748B;
   margin: 0;
 }
 
 /* Profile Score */
 .hira-profile-score {
-  margin-bottom: 24px;
-  padding: 0 8px;
+  margin-bottom: 20px;
+  padding: 0;
 }
 
 .hira-profile-score-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .hira-profile-score-label {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 13px;
+  line-height: 18px;
   color: #64748B;
 }
 
 .hira-profile-score-value {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 14px;
-  line-height: 20px;
-  color: #0284C7;
+  font-size: 13px;
+  line-height: 18px;
+  color: #0EA5E9;
 }
 
 .hira-profile-score-bar {
-  height: 8px;
+  height: 6px;
   background: #E2E8F0;
-  border-radius: 4px;
+  border-radius: 3px;
   overflow: hidden;
 }
 
 .hira-profile-score-fill {
   height: 100%;
-  background: linear-gradient(90deg, #0284C7 0%, #38BDF8 100%);
-  border-radius: 4px;
+  background: linear-gradient(90deg, #0EA5E9 0%, #38BDF8 100%);
+  border-radius: 3px;
   transition: width 0.3s ease;
 }
 
 /* Contact Info */
 .hira-profile-contact {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .hira-profile-contact-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .hira-profile-contact-item:last-child {
@@ -167,26 +173,26 @@
 }
 
 .hira-profile-contact-icon {
-  width: 16px;
-  height: 16px;
-  color: #64748B;
+  width: 14px;
+  height: 14px;
+  color: #94A3B8;
   flex-shrink: 0;
 }
 
 .hira-profile-contact-text {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 13px;
+  line-height: 18px;
   color: #475569;
 }
 
 .hira-profile-contact-link {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: #0284C7;
+  font-size: 13px;
+  line-height: 18px;
+  color: #0EA5E9;
   text-decoration: none;
 }
 
@@ -198,22 +204,22 @@
 .hira-profile-resume {
   background: #F8FAFC;
   border: 1px solid #E2E8F0;
-  border-radius: 12px;
-  padding: 16px;
+  border-radius: 10px;
+  padding: 14px;
 }
 
 .hira-profile-resume-info {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: 10px;
   margin-bottom: 12px;
 }
 
 .hira-profile-resume-icon {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   background: #FEE2E2;
-  border-radius: 8px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -221,9 +227,9 @@
 }
 
 .hira-profile-resume-icon svg {
-  width: 16px;
-  height: 16px;
-  color: #DC2626;
+  width: 14px;
+  height: 14px;
+  color: #EF4444;
 }
 
 .hira-profile-resume-details {
@@ -234,9 +240,9 @@
 .hira-profile-resume-name {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 14px;
-  line-height: 20px;
-  color: #475569;
+  font-size: 13px;
+  line-height: 18px;
+  color: #334155;
   margin: 0 0 2px 0;
   word-break: break-word;
 }
@@ -244,9 +250,9 @@
 .hira-profile-resume-date {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-  color: #94A3B8;
+  font-size: 11px;
+  line-height: 14px;
+  color: #EF4444;
   margin: 0;
 }
 
@@ -254,16 +260,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   width: 100%;
-  padding: 10px 16px;
+  padding: 8px 14px;
   background: #FFFFFF;
   border: 1px solid #E2E8F0;
-  border-radius: 8px;
+  border-radius: 6px;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 13px;
+  line-height: 18px;
   color: #475569;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -271,22 +277,25 @@
 
 .hira-profile-resume-download:hover {
   background: #F1F5F9;
+  border-color: #CBD5E1;
 }
 
 .hira-profile-resume-download svg {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
+  color: #64748B;
 }
 
 /* Profile Right Section */
 .hira-profile-right {
   flex: 1;
   min-width: 0;
+  padding-top: 0;
 }
 
 /* Section Styles */
 .hira-profile-section {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .hira-profile-section:last-child {
@@ -298,8 +307,8 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
-  color: #64748B;
-  margin: 0 0 12px 0;
+  color: #334155;
+  margin: 0 0 10px 0;
 }
 
 .hira-profile-section-text {
@@ -321,24 +330,24 @@
 .hira-profile-skill-tag {
   display: inline-flex;
   align-items: center;
-  padding: 6px 12px;
-  background: #EFF6FF;
-  border: 1px solid #DBEAFE;
+  padding: 6px 14px;
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
   border-radius: 6px;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  color: #1D4ED8;
+  font-size: 13px;
+  line-height: 18px;
+  color: #334155;
 }
 
 /* Experience Item (Card View) */
 .hira-profile-experience-item {
   background: #F8FAFC;
   border: 1px solid #E2E8F0;
-  border-radius: 12px;
-  padding: 16px;
-  margin-bottom: 12px;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
 }
 
 .hira-profile-experience-item:last-child {
@@ -349,7 +358,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .hira-profile-experience-title {
@@ -357,7 +366,7 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
-  color: #0F172A;
+  color: #1E293B;
   margin: 0;
 }
 
@@ -376,7 +385,7 @@
   font-size: 12px;
   line-height: 16px;
   color: #64748B;
-  margin: 0 0 8px 0;
+  margin: 0 0 6px 0;
 }
 
 .hira-profile-experience-desc {
@@ -392,8 +401,8 @@
 .hira-profile-education-item {
   background: #F8FAFC;
   border: 1px solid #E2E8F0;
-  border-radius: 12px;
-  padding: 16px;
+  border-radius: 10px;
+  padding: 14px 16px;
 }
 
 .hira-profile-education-header {
@@ -407,8 +416,8 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
-  color: #0F172A;
-  margin: 0 0 4px 0;
+  color: #1E293B;
+  margin: 0 0 2px 0;
 }
 
 .hira-profile-education-institution {
@@ -426,6 +435,50 @@
   font-size: 12px;
   line-height: 16px;
   color: #64748B;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .hira-profile-card-content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .hira-profile-left {
+    min-width: 100%;
+    max-width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #E2E8F0;
+    padding-right: 0;
+    padding-bottom: 24px;
+  }
+
+  .hira-profile-avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .hira-profile-card {
+    padding: 16px;
+  }
+
+  .hira-profile-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hira-view-analytics-btn {
+    align-items: flex-start;
+  }
+
+  .hira-profile-avatar-large {
+    width: 80px;
+    height: 80px;
+    font-size: 28px;
+  }
 }
 
 /* ==================== DETAILED RESUME SECTION ==================== */
