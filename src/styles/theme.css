@@ -538,6 +538,15 @@ body {
   line-height: 1.25;
 }
 
+.hira-candidate-info .hira-candidate-name-link {
+  cursor: pointer;
+  transition: color var(--hira-transition-fast);
+}
+
+.hira-candidate-info .hira-candidate-name-link:hover {
+  color: var(--hira-primary);
+}
+
 .hira-candidate-info .hira-candidate-email {
   font-size: 0.75rem;
   font-weight: 400;
