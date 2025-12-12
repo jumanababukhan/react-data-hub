@@ -1,0 +1,727 @@
+/* ==================== PROFILE PAGE STYLES ==================== */
+
+.hira-profile-page {
+  padding: 0;
+}
+
+/* Profile Header */
+.hira-profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.hira-profile-header-left h1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #0F172A;
+  margin: 0 0 4px 0;
+}
+
+.hira-profile-header-left p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #64748B;
+  margin: 0;
+}
+
+.hira-view-analytics-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hira-view-analytics-btn span {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #0284C7;
+}
+
+/* Profile Card */
+.hira-profile-card {
+  background: #FFFFFF;
+  border: 1px solid #F1F5F9;
+  border-radius: 16px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.hira-profile-card-content {
+  display: flex;
+  gap: 32px;
+}
+
+/* Profile Left Section */
+.hira-profile-left {
+  min-width: 240px;
+  max-width: 240px;
+}
+
+.hira-profile-avatar-section {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.hira-profile-avatar-large {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: #FFFFFF;
+  margin: 0 auto 16px;
+  background: linear-gradient(135deg, #818CF8 0%, #C084FC 100%);
+}
+
+.hira-profile-name-large {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: #0F172A;
+  margin: 0 0 4px 0;
+}
+
+.hira-profile-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #64748B;
+  margin: 0;
+}
+
+/* Profile Score */
+.hira-profile-score {
+  margin-bottom: 24px;
+  padding: 0 8px;
+}
+
+.hira-profile-score-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.hira-profile-score-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #64748B;
+}
+
+.hira-profile-score-value {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #0284C7;
+}
+
+.hira-profile-score-bar {
+  height: 8px;
+  background: #E2E8F0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.hira-profile-score-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0284C7 0%, #38BDF8 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* Contact Info */
+.hira-profile-contact {
+  margin-bottom: 24px;
+}
+
+.hira-profile-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.hira-profile-contact-item:last-child {
+  margin-bottom: 0;
+}
+
+.hira-profile-contact-icon {
+  width: 16px;
+  height: 16px;
+  color: #64748B;
+  flex-shrink: 0;
+}
+
+.hira-profile-contact-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #475569;
+}
+
+.hira-profile-contact-link {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #0284C7;
+  text-decoration: none;
+}
+
+.hira-profile-contact-link:hover {
+  text-decoration: underline;
+}
+
+/* Resume File */
+.hira-profile-resume {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.hira-profile-resume-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.hira-profile-resume-icon {
+  width: 32px;
+  height: 32px;
+  background: #FEE2E2;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hira-profile-resume-icon svg {
+  width: 16px;
+  height: 16px;
+  color: #DC2626;
+}
+
+.hira-profile-resume-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.hira-profile-resume-name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #475569;
+  margin: 0 0 2px 0;
+  word-break: break-word;
+}
+
+.hira-profile-resume-date {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #94A3B8;
+  margin: 0;
+}
+
+.hira-profile-resume-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 16px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hira-profile-resume-download:hover {
+  background: #F1F5F9;
+}
+
+.hira-profile-resume-download svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Profile Right Section */
+.hira-profile-right {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Section Styles */
+.hira-profile-section {
+  margin-bottom: 24px;
+}
+
+.hira-profile-section:last-child {
+  margin-bottom: 0;
+}
+
+.hira-profile-section-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #64748B;
+  margin: 0 0 12px 0;
+}
+
+.hira-profile-section-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #475569;
+  margin: 0;
+}
+
+/* Skills Tags */
+.hira-profile-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hira-profile-skill-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  background: #EFF6FF;
+  border: 1px solid #DBEAFE;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #1D4ED8;
+}
+
+/* Experience Item (Card View) */
+.hira-profile-experience-item {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.hira-profile-experience-item:last-child {
+  margin-bottom: 0;
+}
+
+.hira-profile-experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+.hira-profile-experience-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #0F172A;
+  margin: 0;
+}
+
+.hira-profile-experience-duration {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #64748B;
+  white-space: nowrap;
+}
+
+.hira-profile-experience-company {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #64748B;
+  margin: 0 0 8px 0;
+}
+
+.hira-profile-experience-desc {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  color: #475569;
+  margin: 0;
+}
+
+/* Education Item (Card View) */
+.hira-profile-education-item {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.hira-profile-education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.hira-profile-education-degree {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #0F172A;
+  margin: 0 0 4px 0;
+}
+
+.hira-profile-education-institution {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #64748B;
+  margin: 0;
+}
+
+.hira-profile-education-duration {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #64748B;
+}
+
+/* ==================== DETAILED RESUME SECTION ==================== */
+
+.hira-detailed-resume {
+  background: #FFFFFF;
+  border: 1px solid #F1F5F9;
+  border-radius: 16px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 32px;
+}
+
+.hira-detailed-resume-header {
+  margin-bottom: 32px;
+}
+
+.hira-detailed-resume-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  color: #0F172A;
+  margin: 0 0 4px 0;
+}
+
+.hira-detailed-resume-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #64748B;
+  margin: 0;
+}
+
+/* Resume Section */
+.hira-resume-section {
+  margin-bottom: 32px;
+}
+
+.hira-resume-section:last-child {
+  margin-bottom: 0;
+}
+
+.hira-resume-section-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #0F172A;
+  margin: 0 0 20px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+/* Detailed Experience Item */
+.hira-resume-experience-item {
+  margin-bottom: 24px;
+}
+
+.hira-resume-experience-item:last-child {
+  margin-bottom: 0;
+}
+
+.hira-resume-experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+.hira-resume-experience-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  color: #0F172A;
+  margin: 0;
+}
+
+.hira-resume-experience-duration {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #64748B;
+  white-space: nowrap;
+}
+
+.hira-resume-experience-company {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #64748B;
+  margin: 0 0 12px 0;
+}
+
+.hira-resume-experience-list {
+  margin: 0;
+  padding: 0 0 0 20px;
+  list-style-type: disc;
+}
+
+.hira-resume-experience-list li {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #475569;
+  margin-bottom: 4px;
+}
+
+.hira-resume-experience-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Technical Skills Grid */
+.hira-resume-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.hira-resume-skills-column h4 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #0F172A;
+  margin: 0 0 12px 0;
+}
+
+.hira-resume-skills-list {
+  margin: 0;
+  padding: 0 0 0 20px;
+  list-style-type: disc;
+}
+
+.hira-resume-skills-list li {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #475569;
+}
+
+/* Education Detailed */
+.hira-resume-education-item {
+  margin-bottom: 16px;
+}
+
+.hira-resume-education-item:last-child {
+  margin-bottom: 0;
+}
+
+.hira-resume-education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+.hira-resume-education-degree {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  color: #0F172A;
+  margin: 0;
+}
+
+.hira-resume-education-duration {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #64748B;
+}
+
+.hira-resume-education-institution {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #64748B;
+  margin: 0 0 8px 0;
+}
+
+.hira-resume-education-details {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #475569;
+  margin: 0;
+}
+
+/* Projects */
+.hira-resume-project-item {
+  margin-bottom: 20px;
+}
+
+.hira-resume-project-item:last-child {
+  margin-bottom: 0;
+}
+
+.hira-resume-project-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  color: #0F172A;
+  margin: 0 0 4px 0;
+}
+
+.hira-resume-project-desc {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #475569;
+  margin: 0 0 4px 0;
+}
+
+.hira-resume-project-tech {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: #0284C7;
+  margin: 0;
+}
+
+/* Certifications List */
+.hira-resume-certifications-list {
+  margin: 0;
+  padding: 0 0 0 20px;
+  list-style-type: disc;
+}
+
+.hira-resume-certifications-list li {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #475569;
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 992px) {
+  .hira-profile-card-content {
+    flex-direction: column;
+  }
+
+  .hira-profile-left {
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  .hira-resume-skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hira-profile-card,
+  .hira-detailed-resume {
+    padding: 24px;
+  }
+
+  .hira-profile-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .hira-view-analytics-btn {
+    align-items: flex-start;
+  }
+
+  .hira-resume-experience-header,
+  .hira-resume-education-header {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hira-profile-card,
+  .hira-detailed-resume {
+    padding: 16px;
+  }
+
+  .hira-profile-avatar-large {
+    width: 100px;
+    height: 100px;
+    font-size: 32px;
+  }
+}

@@ -69,6 +69,7 @@ const CandidatesTable = () => {
       header: 'CANDIDATE',
       cell: ({ row }) => (
         <CandidateCell
+          id={row.original.id}
           name={row.original.name}
           email={row.original.email}
           initials={row.original.initials}
