@@ -1,7 +1,10 @@
 /* ==================== HIRA MAIN STYLES ==================== */
 /* Master CSS file - Import all component styles here */
 
+/* Theme variables first */
 @import './hira-theme.css';
+
+/* Layout & Components */
 @import './layout.css';
 @import './components.css';
 @import './table.css';
