@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../hooks/useAppDispatch';
 import { fetchProfile } from '../store/profileSlice';
 import { ProfileCard, DetailedResume } from '../components/profile';
-import '../styles/profile.css';
 
 const CandidateProfilePage = () => {
   const { id } = useParams();
