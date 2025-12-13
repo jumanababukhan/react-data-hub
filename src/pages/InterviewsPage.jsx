@@ -1,4 +1,3 @@
-import { Badge } from 'reactstrap';
 import { Video, Calendar, Clock } from 'lucide-react';
 
 const interviews = [
@@ -7,22 +6,33 @@ const interviews = [
   { candidate: 'Michael Chang', position: 'Data Scientist', date: 'Dec 17, 2024', time: '11:00 AM', status: 'Pending' },
 ];
 
+const getStatusClass = (status) => {
+  switch (status.toLowerCase()) {
+    case 'confirmed':
+      return 'confirmed';
+    case 'scheduled':
+      return 'scheduled';
+    default:
+      return 'pending';
+  }
+};
+
 const InterviewsPage = () => {
   return (
-    <div>
+    <div className="hira-interviews-list">
       {interviews.map((interview, i) => (
-        <div key={i} className="interview-card">
-          <div className="interview-header">
-            <h5 className="interview-candidate">
+        <div key={i} className="hira-interview-card">
+          <div className="hira-interview-header">
+            <h5 className="hira-interview-candidate">
               <Video size={20} />
               {interview.candidate}
             </h5>
-            <Badge color={interview.status === 'Confirmed' ? 'primary' : 'secondary'}>
+            <span className={`hira-interview-status ${getStatusClass(interview.status)}`}>
               {interview.status}
-            </Badge>
+            </span>
           </div>
-          <p className="interview-position">{interview.position}</p>
-          <div className="interview-meta">
+          <p className="hira-interview-position">{interview.position}</p>
+          <div className="hira-interview-meta">
             <span>
               <Calendar size={16} />
               {interview.date}

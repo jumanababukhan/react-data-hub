@@ -1,6 +1,3 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 /* ==================== HIRA DESIGN SYSTEM VARIABLES ==================== */
 :root {
   /* Primary Colors */
@@ -26,13 +23,17 @@
   --hira-border-color: #E2E8F0;
   --hira-border-light: #F1F5F9;
 
-  /* Status Colors */
+  /* Status Colors - Interviewed */
   --hira-status-interviewed: #1D4ED8;
   --hira-status-interviewed-bg: #EFF6FF;
   --hira-status-interviewed-border: #DBEAFE;
+
+  /* Status Colors - Screened */
   --hira-status-screened: #0891B2;
   --hira-status-screened-bg: #CFFAFE;
   --hira-status-screened-border: #A5F3FC;
+
+  /* Status Colors - Shortlisted */
   --hira-status-shortlisted: #059669;
   --hira-status-shortlisted-bg: #D1FAE5;
   --hira-status-shortlisted-border: #A7F3D0;
@@ -40,6 +41,7 @@
   /* Skill Chip Colors */
   --hira-skill-bg: #EEF6FF;
   --hira-skill-text: #1D4ED8;
+  --hira-skill-border: transparent;
 
   /* Avatar Color */
   --hira-avatar-bg: #1E40AF;
@@ -51,6 +53,7 @@
   /* Shadows */
   --hira-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --hira-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --hira-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
   --hira-shadow-button: 0 10px 15px -3px rgba(14, 165, 233, 0.2), 0 4px 6px -4px rgba(14, 165, 233, 0.2);
 
   /* Transitions */
@@ -75,7 +78,16 @@
   --hira-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
 
 body {
   font-family: var(--hira-font-family);
@@ -83,4 +95,12 @@ body {
   color: var(--hira-text-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* Utility Classes */
+.hira-text-primary { color: var(--hira-text-primary); }
+.hira-text-secondary { color: var(--hira-text-secondary); }
+.hira-text-muted { color: var(--hira-text-muted); }
+.hira-bg-primary { background-color: var(--hira-primary); }
+.hira-bg-card { background-color: var(--hira-card-bg); }

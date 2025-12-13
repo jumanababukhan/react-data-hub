@@ -1,4 +1,3 @@
-import { Row, Col } from 'reactstrap';
 import { Briefcase, MapPin, Clock } from 'lucide-react';
 
 const positions = [
@@ -10,31 +9,29 @@ const positions = [
 
 const PositionsPage = () => {
   return (
-    <Row>
+    <div className="hira-positions-grid">
       {positions.map((position, i) => (
-        <Col key={i} xs={12} md={6} className="mb-4">
-          <div className="position-card">
-            <h5 className="position-title">
-              <Briefcase size={20} />
-              {position.title}
-            </h5>
-            <div className="position-meta">
-              <span>
-                <MapPin size={16} />
-                {position.location}
-              </span>
-              <span>
-                <Clock size={16} />
-                {position.type}
-              </span>
-            </div>
-            <p className="position-applicants">
-              <strong>{position.applicants}</strong> applicants
-            </p>
+        <div key={i} className="hira-position-card">
+          <h5 className="hira-position-title">
+            <Briefcase size={20} />
+            {position.title}
+          </h5>
+          <div className="hira-position-meta">
+            <span>
+              <MapPin size={16} />
+              {position.location}
+            </span>
+            <span>
+              <Clock size={16} />
+              {position.type}
+            </span>
           </div>
-        </Col>
+          <p className="hira-position-applicants">
+            <strong>{position.applicants}</strong> applicants
+          </p>
+        </div>
       ))}
-    </Row>
+    </div>
   );
 };
 
