@@ -408,6 +408,11 @@
   padding: var(--hira-spacing-xl);
 }
 
+/* Header Action Button - Desktop Only */
+.hira-header-action {
+  display: inline-flex;
+}
+
 /* ==================== RESPONSIVE - TABLET (991px) ==================== */
 @media (max-width: 991px) {
   .hira-sidebar {
@@ -431,7 +436,11 @@
     padding: 0 16px;
   }
 
-  /* Show action button in sidebar on mobile/tablet */
+  /* Hide header action, show in sidebar instead */
+  .hira-header-action {
+    display: none;
+  }
+
   .hira-sidebar-action {
     display: block;
   }
