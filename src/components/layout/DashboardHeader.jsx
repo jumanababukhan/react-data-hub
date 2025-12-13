@@ -1,84 +1,41 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useAppSelector } from '../../hooks/useAppDispatch.js';
-import { Upload, Settings, Menu, LogOut, Plus, ArrowLeft, Bot } from 'lucide-react';
+import { Menu, ArrowLeft, Bot } from 'lucide-react';
+import HeaderProfile from './HeaderProfile';
 
-const DashboardHeader = ({ onMenuToggle }) => {
+const DashboardHeader = ({ onMenuToggle, onBack }) => {
   const location = useLocation();
-  const navigate = useNavigate();
   const { totalCount } = useAppSelector((state) => state.candidates);
-
-  // Check if we're on a detail/upload page that needs back button
-  const isDetailPage = location.pathname.includes('/profile/') || 
-                       location.pathname.includes('/upload');
 
   const getHeaderConfig = () => {
     const path = location.pathname;
     
     if (path.includes('/profile/')) {
-      return { 
-        title: 'Candidate Profile', 
-        showBack: true,
-        showButton: false 
-      };
+      return { title: 'Candidate Profile', showBack: true };
     }
     if (path.includes('/upload')) {
-      return { 
-        title: 'Upload Resumes', 
-        showBack: true,
-        showButton: false 
-      };
+      return { title: 'Upload Resumes', showBack: true };
     }
     
     const configs = {
-      '/dashboard': { 
-        title: 'Dashboard', 
-        subtitle: '',
-        buttonText: 'New Position',
-        buttonIcon: Plus,
-        showButton: true 
-      },
-      '/dashboard/candidates': { 
-        title: 'Candidates List', 
-        subtitle: `${totalCount.toLocaleString()} total resumes`,
-        buttonText: 'Upload Resume',
-        buttonIcon: Upload,
-        showButton: true 
-      },
-      '/dashboard/positions': { 
-        title: 'Positions Management', 
-        subtitle: '18 Open Positions',
-        buttonText: 'New Position',
-        buttonIcon: Plus,
-        showButton: true 
-      },
-      '/dashboard/interviews': { 
-        title: 'Interviews', 
-        subtitle: 'Schedule & Manage',
-        buttonText: 'New Position',
-        buttonIcon: Plus,
-        showButton: true 
-      },
+      '/dashboard': { title: 'Dashboard', subtitle: '' },
+      '/dashboard/candidates': { title: 'Candidates List', subtitle: `${totalCount.toLocaleString()} total resumes` },
+      '/dashboard/positions': { title: 'Positions Management', subtitle: '18 Open Positions' },
+      '/dashboard/interviews': { title: 'Interviews', subtitle: 'Schedule & Manage' },
     };
-    return configs[path] || { title: 'Dashboard', showButton: true, buttonText: 'New Position', buttonIcon: Plus };
+    return configs[path] || { title: 'Dashboard' };
   };
 
   const config = getHeaderConfig();
-  const ButtonIcon = config.buttonIcon || Plus;
-
-  const handleLogout = () => {
-    console.log('Logout clicked');
-    // Add logout logic here
-    navigate('/');
-  };
 
   const handleBack = () => {
-    navigate(-1);
+    if (onBack) onBack();
+    else window.history.back();
   };
 
   return (
     <header className="hira-header">
       <div className="hira-header-left">
-        {/* Mobile Menu Button */}
         <button 
           className="hira-btn-icon hira-mobile-menu"
           onClick={onMenuToggle}
@@ -87,18 +44,12 @@ const DashboardHeader = ({ onMenuToggle }) => {
           <Menu size={24} />
         </button>
 
-        {/* Back Button for detail pages */}
         {config.showBack && (
-          <button 
-            className="hira-btn-back"
-            onClick={handleBack}
-            aria-label="Go back"
-          >
+          <button className="hira-btn-back" onClick={handleBack} aria-label="Go back">
             <ArrowLeft size={20} />
           </button>
         )}
 
-        {/* HIRA Logo */}
         <div className="hira-header-logo">
           <div className="hira-logo-icon">
             <Bot size={18} />
@@ -106,49 +57,16 @@ const DashboardHeader = ({ onMenuToggle }) => {
           <span className="hira-logo-name">HIRA</span>
         </div>
 
-        {/* Title */}
-        <div className="hira-header-title">
-          <h1>{config.title}</h1>
+        <div className="hira-header-title-group">
+          <h1 className="hira-header-title">{config.title}</h1>
+          {config.subtitle && (
+            <p className="hira-header-subtitle">{config.subtitle}</p>
+          )}
         </div>
-
-        {/* Subtitle Badge */}
-        {config.subtitle && (
-          <div className="hira-header-badge">
-            <span>{config.subtitle}</span>
-          </div>
-        )}
       </div>
 
       <div className="hira-header-right">
-        {/* Action Button */}
-        {config.showButton && (
-          <button className="hira-btn-primary">
-            <ButtonIcon size={16} />
-            <span>{config.buttonText}</span>
-          </button>
-        )}
-
-        {/* Profile */}
-        <div className="hira-header-profile">
-          <div className="hira-profile-avatar">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Connor" />
-          </div>
-          <div className="hira-profile-info">
-            <p className="hira-profile-name">Sarah Connor</p>
-            <p className="hira-profile-role">HR Manager</p>
-          </div>
-        </div>
-
-        {/* Settings */}
-        <button className="hira-btn-icon" aria-label="Settings">
-          <Settings size={20} />
-        </button>
-
-        {/* Logout */}
-        <button className="hira-btn-logout" onClick={handleLogout}>
-          <LogOut size={18} />
-          <span>Logout</span>
-        </button>
+        <HeaderProfile />
       </div>
     </header>
   );
