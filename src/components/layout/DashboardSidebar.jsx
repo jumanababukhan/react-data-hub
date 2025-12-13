@@ -18,7 +18,7 @@ const DashboardSidebar = ({ isOpen, onClose }) => {
       <aside className={`hira-sidebar ${isOpen ? 'open' : ''}`}>
         {/* Logo */}
         <div className="hira-sidebar-logo">
-          <div className="d-flex align-items-center gap-2">
+          <div className="hira-logo-container">
             <div className="hira-logo-box">
               <Settings size={20} />
             </div>
