@@ -1,0 +1,244 @@
+/* ==================== POSITIONS PAGE ==================== */
+.hira-positions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--hira-spacing-md);
+}
+
+.hira-position-card {
+  background-color: var(--hira-card-bg);
+  border-radius: var(--hira-radius-lg);
+  border: 1px solid var(--hira-border-color);
+  padding: var(--hira-spacing-lg);
+  transition: box-shadow var(--hira-transition-fast);
+}
+
+.hira-position-card:hover {
+  box-shadow: var(--hira-shadow-md);
+}
+
+.hira-position-title {
+  display: flex;
+  align-items: center;
+  gap: var(--hira-spacing-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--hira-text-primary);
+  margin: 0 0 var(--hira-spacing-sm) 0;
+}
+
+.hira-position-title svg {
+  color: var(--hira-primary);
+  flex-shrink: 0;
+}
+
+.hira-position-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--hira-spacing-md);
+  margin-bottom: var(--hira-spacing-md);
+}
+
+.hira-position-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  color: var(--hira-text-secondary);
+}
+
+.hira-position-meta svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.hira-position-applicants {
+  font-size: 0.875rem;
+  color: var(--hira-text-secondary);
+  margin: 0;
+}
+
+.hira-position-applicants strong {
+  color: var(--hira-text-primary);
+  font-weight: 600;
+}
+
+/* ==================== INTERVIEWS PAGE ==================== */
+.hira-interviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hira-spacing-md);
+}
+
+.hira-interview-card {
+  background-color: var(--hira-card-bg);
+  border-radius: var(--hira-radius-lg);
+  border: 1px solid var(--hira-border-color);
+  padding: var(--hira-spacing-lg);
+  transition: box-shadow var(--hira-transition-fast);
+}
+
+.hira-interview-card:hover {
+  box-shadow: var(--hira-shadow-md);
+}
+
+.hira-interview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--hira-spacing-sm);
+  gap: var(--hira-spacing-sm);
+}
+
+.hira-interview-candidate {
+  display: flex;
+  align-items: center;
+  gap: var(--hira-spacing-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--hira-text-primary);
+  margin: 0;
+}
+
+.hira-interview-candidate svg {
+  color: var(--hira-primary);
+  flex-shrink: 0;
+}
+
+.hira-interview-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--hira-radius-full);
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.hira-interview-status.scheduled {
+  background-color: var(--hira-status-screened-bg);
+  color: var(--hira-status-screened);
+}
+
+.hira-interview-status.confirmed {
+  background-color: var(--hira-status-interviewed-bg);
+  color: var(--hira-status-interviewed);
+}
+
+.hira-interview-status.pending {
+  background-color: var(--hira-border-light);
+  color: var(--hira-text-secondary);
+}
+
+.hira-interview-position {
+  font-size: 0.875rem;
+  color: var(--hira-text-secondary);
+  margin: 0 0 var(--hira-spacing-sm) 0;
+}
+
+.hira-interview-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--hira-spacing-md);
+}
+
+.hira-interview-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  color: var(--hira-text-secondary);
+}
+
+.hira-interview-meta svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* ==================== NOT FOUND PAGE ==================== */
+.hira-not-found {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--hira-background);
+  text-align: center;
+  padding: var(--hira-spacing-lg);
+}
+
+.hira-not-found h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--hira-text-primary);
+  margin: 0 0 var(--hira-spacing-md) 0;
+}
+
+.hira-not-found p {
+  font-size: 1.25rem;
+  color: var(--hira-text-secondary);
+  margin: 0 0 var(--hira-spacing-md) 0;
+}
+
+.hira-not-found a {
+  color: var(--hira-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hira-not-found a:hover {
+  text-decoration: underline;
+}
+
+/* ==================== SKELETON LOADING ==================== */
+.hira-skeleton {
+  background: linear-gradient(90deg, var(--hira-border-light) 25%, var(--hira-background) 50%, var(--hira-border-light) 75%);
+  background-size: 200% 100%;
+  animation: hira-shimmer 1.5s infinite;
+  border-radius: var(--hira-radius-sm);
+}
+
+@keyframes hira-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ==================== RESPONSIVE - TABLET (768px) ==================== */
+@media (max-width: 767px) {
+  .hira-positions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hira-position-card,
+  .hira-interview-card {
+    padding: var(--hira-spacing-md);
+  }
+
+  .hira-interview-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hira-not-found h1 {
+    font-size: 3rem;
+  }
+
+  .hira-not-found p {
+    font-size: 1rem;
+  }
+}
+
+/* ==================== RESPONSIVE - SMALL MOBILE (576px) ==================== */
+@media (max-width: 575px) {
+  .hira-position-meta,
+  .hira-interview-meta {
+    flex-direction: column;
+    gap: var(--hira-spacing-sm);
+  }
+
+  .hira-not-found h1 {
+    font-size: 2.5rem;
+  }
+}

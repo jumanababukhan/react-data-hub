@@ -1,4 +1,3 @@
-import { Row, Col, Card, CardBody, CardHeader, CardTitle } from 'reactstrap';
 import { Users, Briefcase, Video, TrendingUp } from 'lucide-react';
 
 const stats = [
@@ -41,45 +40,43 @@ const recentActivity = [
 const DashboardPage = () => {
   return (
     <div>
-      <div className="mb-4">
-        <h2 className="mb-1" style={{ fontWeight: 700 }}>Welcome back, Sarah!</h2>
-        <p className="text-secondary">Here's what's happening with your recruitment pipeline.</p>
+      <div className="hira-dashboard-welcome">
+        <h2>Welcome back, Sarah!</h2>
+        <p>Here's what's happening with your recruitment pipeline.</p>
       </div>
 
-      <Row className="mb-4">
+      <div className="hira-stats-grid">
         {stats.map((stat) => (
-          <Col key={stat.title} xs={12} md={6} lg={3} className="mb-3 mb-lg-0">
-            <div className="stat-card">
-              <div className="stat-header">
-                <p className="stat-title">{stat.title}</p>
-                <div className={`stat-icon ${stat.iconClass}`}>
-                  <stat.icon size={18} />
-                </div>
+          <div key={stat.title} className="hira-stat-card">
+            <div className="hira-stat-header">
+              <p className="hira-stat-title">{stat.title}</p>
+              <div className={`hira-stat-icon ${stat.iconClass}`}>
+                <stat.icon size={18} />
               </div>
-              <p className="stat-value">{stat.value}</p>
-              <p className="stat-change">{stat.change}</p>
             </div>
-          </Col>
+            <p className="hira-stat-value">{stat.value}</p>
+            <p className="hira-stat-change">{stat.change}</p>
+          </div>
         ))}
-      </Row>
+      </div>
 
-      <Card className="custom-card">
-        <CardHeader>
-          <CardTitle tag="h5" className="mb-0">Recent Activity</CardTitle>
-        </CardHeader>
-        <CardBody>
+      <div className="hira-activity-card">
+        <div className="hira-activity-header">
+          <h5>Recent Activity</h5>
+        </div>
+        <div className="hira-activity-body">
           {recentActivity.map((activity, i) => (
-            <div key={i} className="activity-item">
-              <div className="activity-dot" />
-              <div className="activity-content">
-                <p className="activity-action">{activity.action}</p>
-                <p className="activity-name">{activity.name}</p>
+            <div key={i} className="hira-activity-item">
+              <div className="hira-activity-dot" />
+              <div className="hira-activity-content">
+                <p className="hira-activity-action">{activity.action}</p>
+                <p className="hira-activity-name">{activity.name}</p>
               </div>
-              <span className="activity-time">{activity.time}</span>
+              <span className="hira-activity-time">{activity.time}</span>
             </div>
           ))}
-        </CardBody>
-      </Card>
+        </div>
+      </div>
     </div>
   );
 };

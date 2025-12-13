@@ -1,0 +1,463 @@
+/* ==================== TABLE CONTAINER ==================== */
+.hira-table-container {
+  background-color: var(--hira-card-bg);
+  border-radius: var(--hira-radius-xl);
+  border: 1px solid var(--hira-border-light);
+  box-shadow: var(--hira-shadow-sm);
+  overflow: hidden;
+}
+
+/* ==================== TABLE FILTERS ==================== */
+.hira-filters {
+  padding: var(--hira-spacing-lg);
+  border-bottom: 1px solid var(--hira-border-light);
+}
+
+.hira-filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--hira-spacing-md);
+}
+
+.hira-filter-item {
+  min-width: 160px;
+  flex: 1;
+  max-width: 220px;
+}
+
+.hira-filter-input,
+.hira-filter-select {
+  height: 46px;
+  padding: 12px 20px;
+  background-color: var(--hira-card-bg);
+  border: 1px solid var(--hira-border-color);
+  border-radius: var(--hira-radius-lg);
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--hira-text-primary);
+  transition: all var(--hira-transition-fast);
+  width: 100%;
+  font-family: var(--hira-font-family);
+}
+
+.hira-filter-input:focus,
+.hira-filter-select:focus {
+  border-color: var(--hira-primary);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1);
+  outline: none;
+}
+
+.hira-filter-input::placeholder {
+  color: var(--hira-text-secondary);
+}
+
+.hira-filter-select {
+  padding-right: 40px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  cursor: pointer;
+}
+
+.hira-btn-clear-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  color: var(--hira-primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--hira-transition-fast);
+  font-family: var(--hira-font-family);
+  white-space: nowrap;
+}
+
+.hira-btn-clear-filters:hover {
+  color: var(--hira-primary-dark);
+}
+
+.hira-btn-clear-filters svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ==================== DATA TABLE ==================== */
+.hira-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.hira-table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.hira-table thead th {
+  background-color: var(--hira-background);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--hira-text-primary);
+  padding: 16px 24px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--hira-border-color);
+  position: sticky;
+  top: 0;
+}
+
+.hira-table tbody td {
+  padding: 16px 24px;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--hira-border-light);
+  color: var(--hira-text-primary);
+  font-size: 0.875rem;
+}
+
+.hira-table tbody tr:hover {
+  background-color: var(--hira-background);
+}
+
+.hira-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Table Checkbox */
+.hira-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--hira-primary);
+}
+
+/* Candidate Cell */
+.hira-candidate-cell {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hira-candidate-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--hira-primary-foreground);
+  flex-shrink: 0;
+  background-color: var(--hira-avatar-bg);
+  box-shadow: 0px 0px 0px 2px #FFFFFF, 0px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.hira-candidate-info {
+  min-width: 0;
+}
+
+.hira-candidate-info .hira-candidate-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--hira-text-primary);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.hira-candidate-info .hira-candidate-name-link {
+  cursor: pointer;
+  transition: color var(--hira-transition-fast);
+}
+
+.hira-candidate-info .hira-candidate-name-link:hover {
+  color: var(--hira-primary);
+}
+
+.hira-candidate-info .hira-candidate-email {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--hira-text-secondary);
+  margin: 0;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+/* Skills Wrapper */
+.hira-skills-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+/* Skill Chip */
+.hira-skill-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  background-color: var(--hira-skill-bg);
+  color: var(--hira-skill-text);
+  border-radius: var(--hira-radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  line-height: 1.35;
+}
+
+/* Experience Cell */
+.hira-experience-text {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--hira-text-primary);
+  white-space: nowrap;
+}
+
+/* Date Cell */
+.hira-date-text {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--hira-text-sidebar);
+  white-space: nowrap;
+}
+
+/* Status Badge */
+.hira-status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--hira-radius-full);
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.hira-status-badge.hira-status-interviewed {
+  background-color: var(--hira-status-interviewed-bg);
+  color: var(--hira-status-interviewed);
+  border-color: var(--hira-status-interviewed-border);
+}
+
+.hira-status-badge.hira-status-screened {
+  background-color: var(--hira-status-screened-bg);
+  color: var(--hira-status-screened);
+  border-color: var(--hira-status-screened-border);
+}
+
+.hira-status-badge.hira-status-shortlisted {
+  background-color: var(--hira-status-shortlisted-bg);
+  color: var(--hira-status-shortlisted);
+  border-color: var(--hira-status-shortlisted-border);
+}
+
+/* Action Link */
+.hira-action-link {
+  color: var(--hira-primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color var(--hira-transition-fast);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--hira-font-family);
+  white-space: nowrap;
+}
+
+.hira-action-link:hover {
+  color: var(--hira-primary-dark);
+}
+
+/* ==================== TABLE PAGINATION ==================== */
+.hira-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-top: 1px solid var(--hira-border-light);
+  gap: 16px;
+}
+
+.hira-pagination-entries {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: var(--hira-text-secondary);
+}
+
+.hira-entries-select {
+  width: 60px;
+  height: 32px;
+  padding: 4px 8px;
+  background-color: var(--hira-card-bg);
+  border: 1px solid var(--hira-border-color);
+  border-radius: var(--hira-radius-sm);
+  font-size: 0.875rem;
+  color: var(--hira-text-primary);
+  font-family: var(--hira-font-family);
+}
+
+.hira-pagination-info {
+  font-size: 0.875rem;
+  color: var(--hira-text-secondary);
+}
+
+.hira-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hira-page-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  background-color: var(--hira-card-bg);
+  border: 1px solid var(--hira-border-color);
+  border-radius: var(--hira-radius-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--hira-text-primary);
+  cursor: pointer;
+  transition: all var(--hira-transition-fast);
+  font-family: var(--hira-font-family);
+}
+
+.hira-page-btn:hover:not(:disabled):not(.hira-page-btn-active) {
+  background-color: var(--hira-background);
+  border-color: var(--hira-border-color);
+}
+
+.hira-page-btn-active {
+  background-color: var(--hira-primary);
+  border-color: var(--hira-primary);
+  color: var(--hira-primary-foreground);
+}
+
+.hira-page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.hira-page-btn-nav {
+  background-color: var(--hira-card-bg);
+}
+
+.hira-page-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  font-size: 0.875rem;
+  color: var(--hira-text-secondary);
+}
+
+/* ==================== RESPONSIVE - TABLET (768px) ==================== */
+@media (max-width: 767px) {
+  .hira-filters {
+    padding: var(--hira-spacing-md);
+  }
+
+  .hira-filters-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hira-filter-item {
+    width: 100%;
+    min-width: unset;
+    max-width: none;
+  }
+
+  .hira-filter-input,
+  .hira-filter-select {
+    width: 100%;
+  }
+
+  .hira-pagination {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--hira-spacing-md);
+  }
+
+  .hira-pagination-entries,
+  .hira-pagination-info,
+  .hira-pagination-controls {
+    justify-content: center;
+  }
+
+  .hira-table thead th,
+  .hira-table tbody td {
+    padding: 12px 16px;
+  }
+}
+
+/* ==================== RESPONSIVE - SMALL MOBILE (576px) ==================== */
+@media (max-width: 575px) {
+  .hira-filters {
+    padding: var(--hira-spacing-sm);
+  }
+
+  .hira-filter-input,
+  .hira-filter-select {
+    height: 42px;
+    padding: 10px 16px;
+  }
+
+  .hira-page-btn {
+    min-width: 28px;
+    height: 28px;
+    padding: 0 6px;
+    font-size: 0.75rem;
+  }
+
+  .hira-table thead th,
+  .hira-table tbody td {
+    padding: 10px 12px;
+    font-size: 0.8125rem;
+  }
+
+  .hira-candidate-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 0.75rem;
+  }
+
+  .hira-candidate-cell {
+    gap: 10px;
+  }
+
+  .hira-candidate-info .hira-candidate-name {
+    font-size: 0.875rem;
+  }
+
+  .hira-skill-chip {
+    padding: 3px 6px;
+    font-size: 0.6875rem;
+  }
+
+  .hira-status-badge {
+    padding: 3px 8px;
+    font-size: 0.6875rem;
+  }
+
+  .hira-pagination {
+    padding: var(--hira-spacing-sm);
+    gap: var(--hira-spacing-sm);
+  }
+}
