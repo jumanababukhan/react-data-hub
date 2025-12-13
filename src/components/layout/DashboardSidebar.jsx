@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, Users, Briefcase, Video, Settings } from 'lucide-react';
+import { NavLink, useLocation } from 'react-router-dom';
+import { LayoutDashboard, Users, Briefcase, Video, Settings, Upload, Plus } from 'lucide-react';
 
 const navItems = [
   { path: '/dashboard', label: 'Dashboard', icon: LayoutDashboard, end: true },
@@ -9,6 +9,19 @@ const navItems = [
 ];
 
 const DashboardSidebar = ({ isOpen, onClose }) => {
+  const location = useLocation();
+
+  const getActionButton = () => {
+    const path = location.pathname;
+    if (path === '/dashboard/candidates') {
+      return { text: 'Upload Resume', icon: Upload };
+    }
+    return { text: 'New Position', icon: Plus };
+  };
+
+  const actionBtn = getActionButton();
+  const ActionIcon = actionBtn.icon;
+
   return (
     <>
       <div 
@@ -29,7 +42,6 @@ const DashboardSidebar = ({ isOpen, onClose }) => {
           </div>
         </div>
 
-        {/* Divider */}
         <div className="hira-sidebar-divider" />
 
         {/* Navigation */}
@@ -47,6 +59,14 @@ const DashboardSidebar = ({ isOpen, onClose }) => {
             </NavLink>
           ))}
         </nav>
+
+        {/* Mobile Action Button */}
+        <div className="hira-sidebar-action">
+          <button className="hira-btn-primary hira-btn-full">
+            <ActionIcon size={16} />
+            <span>{actionBtn.text}</span>
+          </button>
+        </div>
 
         {/* Footer */}
         <div className="hira-sidebar-footer">

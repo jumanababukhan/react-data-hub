@@ -1,10 +1,16 @@
-/* ==================== DASHBOARD LAYOUT ==================== */
+/* ==================== LAYOUT VARIABLES ==================== */
+:root {
+  --hira-sidebar-width: 220px;
+  --hira-header-height: 64px;
+}
+
+/* ==================== DASHBOARD WRAPPER ==================== */
 .hira-dashboard-wrapper {
   display: flex;
   min-height: 100vh;
 }
 
-/* ==================== SIDEBAR STYLES ==================== */
+/* ==================== SIDEBAR ==================== */
 .hira-sidebar {
   position: fixed;
   left: 0;
@@ -86,7 +92,7 @@
   overflow-y: auto;
 }
 
-.hira-sidebar-nav .hira-nav-item {
+.hira-nav-item {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -100,19 +106,31 @@
   margin-bottom: 4px;
 }
 
-.hira-sidebar-nav .hira-nav-item:hover {
+.hira-nav-item:hover {
   background-color: var(--hira-border-light);
 }
 
-.hira-sidebar-nav .hira-nav-item.active {
+.hira-nav-item.active {
   background-color: #E8F4FD;
   color: var(--hira-primary);
 }
 
-.hira-sidebar-nav .hira-nav-item svg {
+.hira-nav-item svg {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
+}
+
+/* Sidebar Action Button - Mobile Only */
+.hira-sidebar-action {
+  display: none;
+  padding: 16px;
+  border-top: 1px solid var(--hira-border-light);
+}
+
+.hira-sidebar-action .hira-btn-full {
+  width: 100%;
+  justify-content: center;
 }
 
 .hira-sidebar-footer {
@@ -126,7 +144,7 @@
   margin: 0;
 }
 
-/* ==================== SIDEBAR OVERLAY ==================== */
+/* Sidebar Overlay */
 .hira-sidebar-overlay {
   position: fixed;
   top: 0;
@@ -145,7 +163,7 @@
   opacity: 1;
 }
 
-/* ==================== HEADER STYLES ==================== */
+/* ==================== HEADER ==================== */
 .hira-header {
   height: var(--hira-header-height);
   background-color: #ffffff;
@@ -164,6 +182,13 @@
   align-items: center;
   gap: 16px;
   min-width: 0;
+}
+
+.hira-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
 /* Back Button */
@@ -217,72 +242,136 @@
   color: var(--hira-primary-dark);
 }
 
-/* Header Title */
-.hira-header-title {
+/* Header Title Group - Stacked Layout */
+.hira-header-title-group {
+  display: flex;
+  flex-direction: column;
   min-width: 0;
 }
 
-.hira-header-title h1 {
+.hira-header-title {
   font-size: 1.125rem;
   font-weight: 600;
   color: var(--hira-text-primary);
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.3;
   white-space: nowrap;
 }
 
-/* Header Badge */
-.hira-header-badge {
-  display: none;
-  align-items: center;
-  padding: 6px 14px;
-  background-color: #F8FAFC;
-  border: 1px solid var(--hira-border-color);
-  border-radius: 20px;
-  flex-shrink: 0;
+.hira-header-subtitle {
+  font-size: 0.75rem;
+  color: var(--hira-text-muted);
+  margin: 0;
+  line-height: 1.3;
 }
 
-.hira-header-badge span {
-  font-size: 0.8125rem;
-  color: var(--hira-text-secondary);
-  white-space: nowrap;
-}
-
-.hira-header-right {
+/* ==================== HEADER PROFILE ==================== */
+.hira-header-profile {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
+  position: relative;
+}
+
+.hira-profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--hira-radius-full);
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid var(--hira-border-light);
+}
+
+.hira-profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hira-profile-info {
+  display: none;
+}
+
+.hira-profile-info p {
+  margin: 0;
+  text-align: left;
+}
+
+.hira-profile-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--hira-text-primary);
+  line-height: 1.3;
+}
+
+.hira-profile-role {
+  font-size: 0.75rem;
+  color: var(--hira-text-muted);
+  line-height: 1.3;
+}
+
+/* Settings Button */
+.hira-btn-settings {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  color: var(--hira-text-muted);
+  border-radius: var(--hira-radius-md);
+  cursor: pointer;
+  transition: all var(--hira-transition-fast);
   flex-shrink: 0;
 }
 
-/* ==================== HEADER BUTTONS ==================== */
-.hira-btn-primary {
-  display: none;
+.hira-btn-settings:hover {
+  background-color: var(--hira-background);
+  color: var(--hira-text-secondary);
+}
+
+/* Profile Dropdown */
+.hira-profile-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 160px;
+  background-color: #ffffff;
+  border: 1px solid var(--hira-border-color);
+  border-radius: var(--hira-radius-lg);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  z-index: 1000;
+  padding: 8px;
+}
+
+.hira-dropdown-item {
+  display: flex;
   align-items: center;
-  gap: 8px;
-  background-color: var(--hira-primary);
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  background: transparent;
   border: none;
-  color: var(--hira-primary-foreground);
+  color: var(--hira-text-secondary);
   font-size: 0.875rem;
   font-weight: 500;
-  padding: 10px 20px;
   border-radius: var(--hira-radius-md);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: all var(--hira-transition-fast);
   cursor: pointer;
-  white-space: nowrap;
+  transition: all var(--hira-transition-fast);
+  text-align: left;
 }
 
-.hira-btn-primary:hover {
-  background-color: var(--hira-primary-dark);
+.hira-dropdown-item:hover {
+  background-color: var(--hira-background);
+  color: var(--hira-text-primary);
 }
 
-.hira-btn-primary svg {
-  width: 16px;
-  height: 16px;
+.hira-dropdown-item svg {
   flex-shrink: 0;
 }
 
+/* Icon Buttons */
 .hira-btn-icon {
   display: flex;
   align-items: center;
@@ -307,76 +396,6 @@
   display: flex;
 }
 
-.hira-btn-logout {
-  display: none;
-  align-items: center;
-  gap: 8px;
-  background: transparent;
-  border: none;
-  color: var(--hira-text-secondary);
-  font-size: 0.875rem;
-  font-weight: 500;
-  padding: 8px 12px;
-  border-radius: var(--hira-radius-md);
-  cursor: pointer;
-  transition: all var(--hira-transition-fast);
-  white-space: nowrap;
-}
-
-.hira-btn-logout:hover {
-  background-color: var(--hira-background);
-  color: var(--hira-text-primary);
-}
-
-.hira-btn-logout svg {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-}
-
-/* ==================== HEADER PROFILE ==================== */
-.hira-header-profile {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.hira-profile-avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: var(--hira-radius-full);
-  overflow: hidden;
-  flex-shrink: 0;
-  border: 2px solid var(--hira-border-light);
-}
-
-.hira-profile-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hira-profile-info {
-  display: none;
-}
-
-.hira-profile-info p {
-  margin: 0;
-}
-
-.hira-profile-info .hira-profile-name {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--hira-text-primary);
-  line-height: 1.3;
-}
-
-.hira-profile-info .hira-profile-role {
-  font-size: 0.75rem;
-  color: var(--hira-text-muted);
-  line-height: 1.3;
-}
-
 /* ==================== MAIN CONTENT ==================== */
 .hira-main-content {
   margin-left: var(--hira-sidebar-width);
@@ -389,7 +408,7 @@
   padding: var(--hira-spacing-xl);
 }
 
-/* ==================== RESPONSIVE - TABLET (992px) ==================== */
+/* ==================== RESPONSIVE - TABLET (991px) ==================== */
 @media (max-width: 991px) {
   .hira-sidebar {
     transform: translateX(-100%);
@@ -412,27 +431,16 @@
     padding: 0 16px;
   }
 
-  .hira-btn-primary {
-    display: inline-flex;
+  /* Show action button in sidebar on mobile/tablet */
+  .hira-sidebar-action {
+    display: block;
   }
 }
 
-/* ==================== RESPONSIVE - TABLET & UP (768px+) ==================== */
+/* ==================== RESPONSIVE - TABLET UP (768px+) ==================== */
 @media (min-width: 768px) {
-  .hira-header-badge {
-    display: flex;
-  }
-
   .hira-profile-info {
     display: block;
-  }
-
-  .hira-btn-logout {
-    display: flex;
-  }
-
-  .hira-btn-primary {
-    display: inline-flex;
   }
 }
 
@@ -450,12 +458,16 @@
     gap: 8px;
   }
 
-  .hira-header-title h1 {
+  .hira-header-title {
     font-size: 1rem;
+  }
+
+  .hira-header-subtitle {
+    font-size: 0.6875rem;
   }
 }
 
-/* ==================== RESPONSIVE - SMALL MOBILE (576px) ==================== */
+/* ==================== RESPONSIVE - SMALL MOBILE (575px) ==================== */
 @media (max-width: 575px) {
   .hira-content-area {
     padding: var(--hira-spacing-md) var(--hira-spacing-sm);
@@ -463,7 +475,6 @@
 
   .hira-header {
     padding: 0 12px;
-    gap: 8px;
   }
 
   .hira-header-left {
@@ -474,11 +485,12 @@
     gap: 6px;
   }
 
-  .hira-header-title h1 {
+  .hira-header-title {
     font-size: 0.9375rem;
   }
 
-  .hira-btn-icon {
+  .hira-btn-icon,
+  .hira-btn-settings {
     width: 32px;
     height: 32px;
   }
@@ -493,16 +505,5 @@
 @media (min-width: 992px) {
   .hira-mobile-menu {
     display: none;
-  }
-}
-
-/* ==================== LARGE DESKTOP (1200px+) ==================== */
-@media (min-width: 1200px) {
-  .hira-content-area {
-    padding: var(--hira-spacing-xl) 48px;
-  }
-
-  .hira-header {
-    padding: 0 32px;
   }
 }
